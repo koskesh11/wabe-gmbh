@@ -29,6 +29,17 @@ export default function Landing() {
   return (
     <div className="landing">
 
+      {/* Top Bar */}
+      <div className="topbar">
+        <div className="topbar-links">
+          <a href="#home">Home</a>
+          <a href="#solaranlagen">Solaranlagen</a>
+          <a href="#dachsanierung">Dachsanierung</a>
+          <a href="#schieferarbeiten">Schieferarbeiten</a>
+          <a href="#angebot" className="topbar-cta">Angebot Einholen</a>
+        </div>
+      </div>
+
       {/* Navigation */}
       <nav className="nav">
         <div className="nav-logo">

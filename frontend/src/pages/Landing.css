@@ -1,3 +1,50 @@
+/* ===== TOP BAR ===== */
+.topbar {
+  background-color: #1a202c;
+  border-bottom: 2px solid #C41E1F;
+  padding: 0.45rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.topbar-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  padding: 0.3rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.2s;
+}
+
+.topbar-links a:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.topbar-links a:hover {
+  color: #fff;
+}
+
+.topbar-links .topbar-cta {
+  background-color: #C41E1F;
+  color: #fff;
+  border: none;
+  margin-left: 0.75rem;
+  font-weight: 700;
+}
+
+.topbar-links .topbar-cta:hover {
+  background-color: #A01819;
+}
+
 /* ===== LAYOUT ===== */
 .landing {
   display: flex;
@@ -437,6 +484,10 @@
 }
 
 @media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+
   .nav {
     flex-direction: column;
     gap: 0.75rem;
