@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: wabe-postgres
+    environment:
+      POSTGRES_DB: wabe_db
+      POSTGRES_USER: wabe_user
+      POSTGRES_PASSWORD: wabe_secure_password_change_this
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wabe_user -d wabe_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    container_name: wabe-backend
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      JWT_SECRET: dev_super_secret_key_at_least_32_characters_long
+      DB_URL: postgresql://wabe_user:wabe_secure_password_change_this@postgres:5432/wabe_db
+      ALLOWED_ORIGINS: http://localhost:3000
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: wabe-network

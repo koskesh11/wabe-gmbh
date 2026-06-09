@@ -1,0 +1,24 @@
+{
+  "name": "wabe-gmbh-portal",
+  "version": "1.0.0",
+  "description": "Wabe GmbH Customer Portal - Secure file management system",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install && cd ..",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "audit": "npm audit && cd backend && npm audit && cd ../frontend && npm audit"
+  },
+  "keywords": [
+    "security",
+    "authentication",
+    "file-upload",
+    "customer-portal"
+  ],
+  "author": "Wabe GmbH",
+  "license": "PROPRIETARY"
+}
