@@ -1,15 +1,16 @@
 :root {
-  --primary-color: #0f6e56;
-  --primary-dark: #085041;
+  --primary-color: #C41E1F;
+  --primary-dark: #A01819;
   --bg-primary: #ffffff;
   --bg-secondary: #f9f9f9;
+  --bg-dark: #4A5568;
   --text-primary: #2c2c2c;
   --text-secondary: #666666;
   --border-color: #e0e0e0;
   --success-color: #3b6d11;
   --danger-color: #a32d2d;
   --warning-color: #ba7517;
-  --border-radius: 8px;
+  --border-radius: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,6 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+  line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -76,7 +78,7 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.1);
+  box-shadow: 0 0 0 3px rgba(196, 30, 31, 0.1);
 }
 
 .container {
@@ -90,16 +92,21 @@ input:focus, textarea:focus, select:focus {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 2rem;
   border-radius: var(--border-radius);
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   transition: all 0.2s;
   border: none;
   cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-primary {
@@ -109,12 +116,13 @@ input:focus, textarea:focus, select:focus {
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
+  color: white;
 }
 
 .btn-secondary {
   background-color: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
 }
 
 .btn-secondary:hover {
